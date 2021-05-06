@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ES">
+<head>
+	<link rel='stylesheet', href='css/style.css'>
+	<link rel='stylesheet', href='css/sim.css'>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<script type="text/javascript" src="test.js"> </script>
+</head>
+<body>
+
+	<div>
+		<table id="res">
+			<tr>
+				<td id="title" colspan="3">
+					<select id="tipos" onchange="tipos()">
+						<option value="0" disabled selected hidden> JORNADA </option>
+						<option value="jor1"> JORNADA 1 </option>
+						<option value="jor2"> JORNADA 2 </option>
+						<option value="jor3"> JORNADA 3 </option>
+						<option value="jor4"> JORNADA 4 </option>
+						<option value="jor5"> JORNADA 5 </option>
+						<option value="jor6"> JORNADA 6 </option>
+						<option value="jor7"> JORNADA 7 </option>
+						<option value="jor8"> JORNADA 8 </option>
+						<option value="jor9"> JORNADA 9 </option>
+						<option value="jor10"> JORNADA 10 </option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td class="team" id="t1">Málaga C.F.</td>
+				<td>
+					<input class="inpRes" id="res1" type="text">			
+					<input class="inpRes" id="res2" type="text">
+				</td>
+				<td class="team" id="t2">C.D. Alhaurino</td>
+			</tr>
+			<tr>
+				<td class="team" id="t3">Alhaurín de la Torre C.F.</td>
+				<td>
+					<input class="inpRes" id="res3" type="text">			
+					<input class="inpRes" id="res4" type="text">
+				</td>
+				<td class="team" id="t4">C.D. Estepona</td>
+			</tr>
+			<tr>
+				<td class="team" id="t5">Marbella F.C.</td>
+				<td>
+					<input class="inpRes" id="res5" type="text">			
+					<input class="inpRes" id="res6" type="text">
+				</td>
+				<td class="team" id="t6">Juventud Torremolinos C.F.</td>
+			</tr>
+			<tr>
+				<td class="team" id="t7">El Palo C.F.</td>
+				<td>
+					<input class="inpRes" id="res7" type="text">			
+					<input class="inpRes" id="res8" type="text">
+				</td>
+				<td class="team" id="t8">C.A. Malagueño</td>
+			</tr>
+			<tr>
+				<td class="team" id="t9">Vélez C.F.</td>
+				<td>
+					<input class="inpRes" id="res9" type="text">			
+					<input class="inpRes" id="res10" type="text">
+				</td>
+				<td class="team" id="t10">Antequera C.F.</td>
+			</tr>
+			<tr>
+				<td colspan="3">
+					<button onclick="simular()"> SIMULAR </button>
+				</td>
+			</tr>
+		</table>
+	</div>
+
+	<div>
+		<table id="leagueTable">
+			<tr>
+				<td> </td>
+				<td> </td>
+				<th class="titles"> Puntos </th>
+				<th class="titles"> P.J. </th>
+				<th class="titles"> V </th>
+				<th class="titles"> E </th>
+				<th class="titles"> D </th>
+				<th class="titles"> G.F. </th>
+				<th class="titles"> G.C. </th>
+				<th class="titles"> D.G. </th>
+			</tr>
+			<tr class="row1">
+				<td class="posAsc"> 1 </td>
+				<td> Team </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+			</tr>
+			<tr class="row2">
+				<td class="posAsc"> 2 </td>
+				<td> Team </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+			</tr>
+			<tr class="row1">
+				<td class="posAsc"> 3 </td>
+				<td> Team </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+			</tr>
+			<tr class="row2">
+				<td class="posInt"> 4 </td>
+				<td> Team </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+			</tr>
+			<tr class="row1">
+				<td class="posInt"> 5 </td>
+				<td> Team </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+			</tr>
+			<tr class="row2">
+				<td class="posInt"> 6 </td>
+				<td> Team </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+			</tr>
+			<tr class="row1">
+				<td class="posInt"> 7 </td>
+				<td> Team </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+			</tr>
+			<tr class="row2">
+				<td class="posDsc"> 8 </td>
+				<td> Team </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+			</tr>
+			<tr class="row1">
+				<td class="posDsc"> 9 </td>
+				<td> Team </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+			</tr>
+			<tr class="row2">
+				<td class="posDsc"> 10 </td>
+				<td> Team </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+				<td> </td>
+			</tr>
+		</table>
+	</div>
+	
+</body>
+</html>
